@@ -20,10 +20,10 @@
 		"url": "https://github.com/NicolasFlamel1/SMAZ/issues"
 	},
 	"dependencies": {
-		"@nicolasflamel/smaz-wasm": "^0.0.28"
+		"@nicolasflamel/smaz-wasm": "^0.0.29"
 	},
 	"optionalDependencies": {
-		"@nicolasflamel/smaz-native": "^0.0.22",
-		"@nicolasflamel/smaz-react": "^0.0.9"
+		"@nicolasflamel/smaz-native": "^0.0.24",
+		"@nicolasflamel/smaz-react": "^0.0.10"
 	}
 }
