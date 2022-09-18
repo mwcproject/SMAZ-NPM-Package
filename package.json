@@ -1,0 +1,29 @@
+{
+	"name": "@nicolasflamel/smaz",
+	"version": "0.0.1",
+	"description": "NPM package for parts of the official SMAZ implementation",
+	"main": "./index.js",
+	"files": [
+		"*",
+		"!main.cpp"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/NicolasFlamel1/SMAZ.git"
+	},
+	"keywords": [
+		"SMAZ"
+	],
+	"author": "Nicolas Flamel",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/NicolasFlamel1/SMAZ/issues"
+	},
+	"dependencies": {
+		"@nicolasflamel/smaz-wasm": "^0.0.28"
+	},
+	"optionalDependencies": {
+		"@nicolasflamel/smaz-native": "^0.0.22",
+		"@nicolasflamel/smaz-react": "^0.0.9"
+	}
+}
