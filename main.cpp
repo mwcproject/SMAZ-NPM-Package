@@ -2,6 +2,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+#include <vector>
 
 // Check if using Emscripten
 #ifdef __EMSCRIPTEN__
@@ -84,16 +85,16 @@ size_t compressSize(const uint8_t *input, size_t inputSize) {
 	for(size_t i = 0; inputSize + i * SIZE_SCALING_FACTOR >= inputSize + i && inputSize + i != SIZE_MAX;) {
 	
 		// Initialize result
-		uint8_t result[inputSize + i];
+		vector<uint8_t> result(inputSize + i);
 		
 		// Get result size
-		size_t resultSize = smaz_compress(const_cast<char *>(reinterpret_cast<const char *>(input)), inputSize, reinterpret_cast<char *>(result), sizeof(result));
+		size_t resultSize = smaz_compress(const_cast<char *>(reinterpret_cast<const char *>(input)), inputSize, reinterpret_cast<char *>(result.data()), result.size());
 		
 		// Clear memory
-		explicit_bzero(result, sizeof(result));
+		explicit_bzero(result.data(), result.size());
 		
 		// Check if the result size was large enough
-		if(resultSize != sizeof(result) + 1) {
+		if(resultSize != result.size() + 1) {
 			
 			// Return result size
 			return resultSize;
@@ -121,16 +122,16 @@ size_t decompressSize(const uint8_t *input, size_t inputSize) {
 	for(size_t i = 0; inputSize + i * SIZE_SCALING_FACTOR >= inputSize + i && inputSize + i != SIZE_MAX;) {
 	
 		// Initialize result
-		uint8_t result[inputSize + i];
+		vector<uint8_t> result(inputSize + i);
 		
 		// Get result size
-		size_t resultSize = smaz_decompress(const_cast<char *>(reinterpret_cast<const char *>(input)), inputSize, reinterpret_cast<char *>(result), sizeof(result));
+		size_t resultSize = smaz_decompress(const_cast<char *>(reinterpret_cast<const char *>(input)), inputSize, reinterpret_cast<char *>(result.data()), result.size());
 		
 		// Clear memory
-		explicit_bzero(result, sizeof(result));
+		explicit_bzero(result.data(), result.size());
 		
 		// Check if the result size was large enough
-		if(resultSize != sizeof(result) + 1) {
+		if(resultSize != result.size() + 1) {
 			
 			// Return result size
 			return resultSize;
