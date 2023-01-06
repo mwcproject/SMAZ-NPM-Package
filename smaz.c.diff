@@ -1,0 +1,24 @@
+--- smaz-master/smaz.c	2012-02-24 01:07:44.000000000 -0800
++++ smaz.c	2023-01-06 08:52:27.205450485 -0800
+@@ -159,9 +159,10 @@
+     char *_out = out;
+     int _outlen = outlen;
+ 
+-    while(inlen) {
++    while(inlen > 0) {
+         if (*c == 254) {
+             /* Verbatim byte */
++            if (inlen < 2) return 0;
+             if (outlen < 1) return _outlen+1;
+             *out = *(c+1);
+             out++;
+@@ -170,7 +171,9 @@
+             inlen -= 2;
+         } else if (*c == 255) {
+             /* Verbatim string */
++            if (inlen < 2) return 0;
+             int len = (*(c+1))+1;
++            if (inlen < 2+len) return 0;
+             if (outlen < len) return _outlen+1;
+             memcpy(out,c+2,len);
+             out += len;

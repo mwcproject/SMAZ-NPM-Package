@@ -134,7 +134,7 @@ size_t decompressSize(const uint8_t *input, size_t inputSize) {
 		if(resultSize != result.size() + 1) {
 			
 			// Return result size
-			return resultSize;
+			return (resultSize == 0 && inputSize != 0) ? INVALID_SIZE : resultSize;
 		}
 		
 		// Update size
