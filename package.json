@@ -1,6 +1,6 @@
 {
 	"name": "@nicolasflamel/smaz",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "NPM package for parts of the official SMAZ implementation",
 	"main": "./index.js",
 	"files": [
@@ -25,7 +25,7 @@
 		"@nicolasflamel/smaz-wasm": "^0.0.31"
 	},
 	"optionalDependencies": {
-		"@nicolasflamel/smaz-native": "^0.0.26",
+		"@nicolasflamel/smaz-native": "^0.0.27",
 		"@nicolasflamel/smaz-react": "^0.0.12"
 	}
 }
