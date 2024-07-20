@@ -5,7 +5,7 @@
 try {
 
 	// Export SMAZ React Native module
-	module["exports"] = require("@nicolasflamel/smaz-react");
+	module["exports"] = require("@mwcproject/smaz-react");
 }
 
 // Catch errors
@@ -15,13 +15,13 @@ catch(error) {
 	try {
 	
 		// Export SMAZ Node.js addon
-		module["exports"] = require("@nicolasflamel/smaz-native");
+		module["exports"] = require("@mwcproject/smaz-native");
 	}
 	
 	// Catch errors
 	catch(error) {
 	
 		// Export SMAZ WASM wrapper
-		module["exports"] = require("@nicolasflamel/smaz-wasm");
+		module["exports"] = require("@mwcproject/smaz-wasm");
 	}
 }

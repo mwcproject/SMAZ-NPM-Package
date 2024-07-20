@@ -6,9 +6,9 @@
 
 // Modules
 const MODULES = [
-	"@nicolasflamel/smaz-native",
-	"@nicolasflamel/smaz-wasm",
-	"@nicolasflamel/smaz-wasm.asmjs"
+	"@mwcproject/smaz-native",
+	"@mwcproject/smaz-wasm",
+	"@mwcproject/smaz-wasm.asmjs"
 ];
 
 // Tests
